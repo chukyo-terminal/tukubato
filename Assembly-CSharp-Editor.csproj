@@ -74,7 +74,6 @@
     <Compile Include="Assets\Forst\CTI Runtime Components\CTI Runtime Components URP 14plus\Scripts\Editor\CTI_URP_ShaderGUI.cs" />
     <Compile Include="Assets\Forst\CTI Runtime Components\CTI Runtime Components URP 14plus\Scripts\Editor\CTI_URPTransDrawer.cs" />
     <Compile Include="Assets\Forst\Conifers [BOTD]\Installer\Editor\ConifersInstaller.cs" />
-    <Compile Include="Assets\Forst\Conifers [BOTD]\Installer\Editor\LaunchConifersInstaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
