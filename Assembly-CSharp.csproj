@@ -73,16 +73,19 @@
     <Compile Include="Assets\IkinokoBattle\Scripts\ItemButton.cs" />
     <Compile Include="Assets\AllStarCharacterLibrary\Scripts\Mecanim\ExitState.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\Spawner.cs" />
+    <Compile Include="Assets\IkinokoBattle\Scripts\PlayerWeaponController.cs" />
     <Compile Include="Assets\AllStarCharacterLibrary\Scripts\CamGoal.cs" />
     <Compile Include="Assets\AllStarCharacterLibrary\Scripts\Mecanim\EnemyHitCheck.cs" />
     <Compile Include="Assets\JoyconDemo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\IkinokoBattle\Scripts\MakeSpear.cs" />
     <Compile Include="Assets\AllStarCharacterLibrary\Scripts\Game.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\EnemyMove.cs" />
     <Compile Include="Assets\AllStarCharacterLibrary\Scripts\EnemyController.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\ItemsDialog.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\RoundLight.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\GameOverTextAnimator.cs" />
+    <Compile Include="Assets\IkinokoBattle\Scripts\WeaponData.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\AllStarCharacterLibrary\Scripts\CamAngleObject.cs" />
@@ -129,6 +132,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\StartButton.cs" />
+    <Compile Include="Assets\IkinokoBattle\Scripts\HitDetector.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\PlayerEvents.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
@@ -159,6 +163,7 @@
     <Compile Include="Assets\IkinokoBattle\Scripts\EnemyStatus.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\GameManager.cs" />
     <Compile Include="Assets\AllStarCharacterLibrary\Scripts\CamZone.cs" />
+    <Compile Include="Assets\IkinokoBattle\Scripts\MakeSword.cs" />
     <Compile Include="Assets\AllStarCharacterLibrary\Scripts\Mecanim\BasicHitCheck.cs" />
     <Compile Include="Assets\AllStarCharacterLibrary\Scripts\Stats.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />

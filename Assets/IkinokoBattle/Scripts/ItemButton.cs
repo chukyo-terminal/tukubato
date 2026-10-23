@@ -32,6 +32,7 @@ public class ItemButton : MonoBehaviour
 
 	private Button _button;
 	private OwnedItemsData.OwnedItem _ownedItem;
+	
 
     private void Awake()
     {
@@ -41,11 +42,11 @@ public class ItemButton : MonoBehaviour
 
 	private void OnClick()
 	{
-		if (_ownedItem == null) return;
+		if (_ownedItem == null ) return;
 
-		if (_ownedItem.Type != Item.ItemType.Medicine) return;
-
-        infPanel.Open(this);
+		
+	    infPanel.Open(this);
+		
     }
 
 	[Serializable]

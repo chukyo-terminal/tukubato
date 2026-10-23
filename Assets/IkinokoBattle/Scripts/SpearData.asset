@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22dd1352bae85674792dcdd55a20d26b, type: 3}
+  m_Name: SpearData
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponData
+  weaponName: 
+  weaponPrefab: {fileID: 1433962087805124, guid: 7198ebc1636d9014b899ad585859bb94, type: 3}
+  hitDetectorPrefab: {fileID: 7728915406079525774, guid: 228e2204238b76c4399da73a6ad855de, type: 3}
+  damage: 1
+  attackCooldown: 0
+  attackRange: 0
+  attackAnimation: {fileID: 7400000, guid: de7f81be473e8314980af0a1ed45c3b0, type: 2}
+  idleAnimation: {fileID: 7400000, guid: d03fba3d03e85e0429381cdb1dd4e26a, type: 2}
+  hitOffset: {x: 0, y: 0.5, z: 0.5}
