@@ -15,9 +15,12 @@ public class TutrialManager : MonoBehaviour
         "まずは移動してみよう！",
         "次は敵を攻撃して倒そう！",
         "アイテムをドロップしたよ！(A/Enterで次へ)",
-        "アイテムでくすりを作ってみよう！",
-        "次はアイテムを使ってみよう！",
-        "これでチュートリアルは終わり！"
+        "アイテムで剣を作ってみよう！",
+        "次は剣を装備してみよう！",
+        "武器を装備すると攻撃力や攻撃スピードが変化する！(A/Enterで次へ)",
+        "さらに、武器を追加で作ると武器のレベルが上がって強くなる！(A/Enterで次へ)",
+        "武器やアイテムをたくさん作って敵を倒し続けよう！(A/Enterで次へ)",
+        "敵を倒してポイントがたまったらゲーム終了！最速クリアを目指せ！"
     };
 
     private int step = 0;
@@ -28,7 +31,6 @@ public class TutrialManager : MonoBehaviour
         nextTutorialAction.action.performed += ctx => OnFirstMessageInput();
         PlayerEvents.OnMove += () => CheckStep("move");
         PlayerEvents.OnEnemyKilled += () => CheckStep("kill");
-        PlayerEvents.OnGet += () => CheckStep("get");
         PlayerEvents.OnCraft += () => CheckStep("craft");
         PlayerEvents.OnUseItem += () => CheckStep("use");
     }
@@ -41,6 +43,21 @@ public class TutrialManager : MonoBehaviour
         }
 
         if (step == 3)
+        {
+            NextStep();
+        }
+
+        if (step == 6)
+        {
+            NextStep();
+        }
+
+        if (step == 7)
+        {
+            NextStep();
+        }
+
+        if (step == 8)
         {
             NextStep();
         }
@@ -61,9 +78,7 @@ public class TutrialManager : MonoBehaviour
                 if (action == "kill") NextStep();
                 break;
 
-            case 3:
-                if (action == "get") NextStep();
-                break;
+            
 
             case 4: // アイテム作成フェーズ
                 if (action == "craft") NextStep();
@@ -72,6 +87,7 @@ public class TutrialManager : MonoBehaviour
             case 5: // アイテム使用フェーズ
                 if (action == "use") NextStep();
                 break;
+
 
         }
     }
@@ -94,7 +110,7 @@ public class TutrialManager : MonoBehaviour
     private void ShowStep(int s)
     {
         StartCoroutine(ChangeText(messages[s]));
-        if (s == 6)
+        if (s == 9)
         {
             StartCoroutine(ReturnToTitleAfterDelay());
         }

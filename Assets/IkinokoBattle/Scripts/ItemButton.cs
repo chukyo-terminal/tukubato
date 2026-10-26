@@ -40,16 +40,26 @@ public class ItemButton : MonoBehaviour
 		_button.onClick.AddListener(OnClick);
     }
 
-	private void OnClick()
-	{
-		if (_ownedItem == null ) return;
+    private void OnClick()
+    {
+        if (_ownedItem == null) return;
 
-		
-	    infPanel.Open(this);
-		
+        switch (_ownedItem.Type)
+        {
+            case Item.ItemType.Medicine:
+            case Item.ItemType.Sword:
+            case Item.ItemType.Spear:
+                infPanel.Open(this);
+                break;
+
+            default:
+                // それ以外は何もしない
+                break;
+        }
     }
 
-	[Serializable]
+
+    [Serializable]
 	public class ItemTypeSpriteMap
 	{
 		public Item.ItemType itemType;

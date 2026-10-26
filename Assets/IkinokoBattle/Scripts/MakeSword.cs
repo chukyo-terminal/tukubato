@@ -38,6 +38,8 @@ public class MakeSword : MonoBehaviour
 
         itemsDialog.Rode();
 
+        PlayerEvents.OnCraft?.Invoke();
+
         Debug.Log("Œ•‚ğì¬");
     }
 }

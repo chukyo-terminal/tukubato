@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1919531998362737694}
   - component: {fileID: 1029255279874740194}
   - component: {fileID: 5396782077366261018}
+  - component: {fileID: 6423097716767908679}
   m_Layer: 9
   m_Name: Slime_Green_Tutrial
   m_TagString: Enemy
@@ -168,6 +169,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MobItemDropper
   dropRate: 1
   itemPrefab: {fileID: 8680121494687775295, guid: 3f131696b928c0b43bfc0aa9f495cf03, type: 3}
+  number: 10
+--- !u!114 &6423097716767908679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529170950211936755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cffcf857c9957049b00332cc82c5b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MobItemDropper
+  dropRate: 1
+  itemPrefab: {fileID: 9152481847138212938, guid: 7706fd457dcfbef42911e21f5f206f84, type: 3}
   number: 10
 --- !u!1 &909511919368009018
 GameObject:

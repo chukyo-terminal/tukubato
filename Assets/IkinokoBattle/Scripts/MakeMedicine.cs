@@ -33,7 +33,7 @@ public class MakeMedicine : MonoBehaviour
 
         itemsDialog.Rode();
 
-        PlayerEvents.OnCraft?.Invoke();
+        
 
         Debug.Log("–ò‚ğì¬");
     }

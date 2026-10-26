@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text clearTimeText;
     [SerializeField] private GameObject clearPanel;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private TMP_Text pointText;   // ← 追加
 
     public static GameManager instance;
 
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         clearPanel.SetActive(false);
+        UpdatePointUI(); // ← 初期表示
     }
     
     public void AddPoint(int value)
@@ -32,10 +34,17 @@ public class GameManager : MonoBehaviour
         currentPoint += value;
         Debug.Log("ポイント：" + currentPoint);
 
-        if(currentPoint >= clearPoint)
+        UpdatePointUI(); // ← 更新
+
+        if (currentPoint >= clearPoint)
         {
             OnGameClear();
         }
+    }
+
+    private void UpdatePointUI()
+    {
+        pointText.text = $"ポイント: {currentPoint} / {clearPoint}";
     }
 
     public void OnGameClear()
