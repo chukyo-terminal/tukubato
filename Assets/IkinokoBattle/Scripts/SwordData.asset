@@ -13,11 +13,14 @@ MonoBehaviour:
   m_Name: SwordData
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
   weaponName: 
-  weaponPrefab: {fileID: 1789174603495292, guid: e6366c262a45a004e81a8d3d53cf333f, type: 3}
+  weaponPrefab: {fileID: 6470967896291638086, guid: ad586a2a422b6b14dbcf4a2ad10d04c8, type: 3}
   hitDetectorPrefab: {fileID: 7728915406079525774, guid: 228e2204238b76c4399da73a6ad855de, type: 3}
+  weaponType: 4
   damage: 2
   attackCooldown: 0
   attackRange: 0
   attackAnimation: {fileID: 7400000, guid: 3ac2fc8bbb35998488378a88779c7e33, type: 2}
   idleAnimation: {fileID: 7400000, guid: 6ec045986f5ef8840a0a810f4f4172c7, type: 3}
   hitOffset: {x: 0, y: 0.5, z: 0.5}
+  levelDamage: 020000000300000004000000
+  levelcooldown: []

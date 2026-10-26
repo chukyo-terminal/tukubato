@@ -29,6 +29,10 @@ public class PlayerWeaponController : MonoBehaviour
     {
         currentWeapon = newWeapon;
 
+        int weaponLevel = OwnedItemsData.Instance.GetItem(newWeapon.weaponType)?.Number ?? 1;
+        weaponLevel = Mathf.Clamp(weaponLevel, 1, newWeapon.levelDamage.Length);
+
+
         // å√Ç¢ïêäÌÉÇÉfÉãÇè¡Ç∑
         if (equippedWeaponModel != null)
             Destroy(equippedWeaponModel);
@@ -48,6 +52,9 @@ public class PlayerWeaponController : MonoBehaviour
 
     public void OnAttackStart()
     {
+        int weaponLevel = OwnedItemsData.Instance.GetItem(currentWeapon.weaponType)?.Number ?? 1;
+        weaponLevel = Mathf.Clamp(weaponLevel, 1, currentWeapon.levelDamage.Length);
+
         if (currentHit != null)
             Destroy(currentHit);
         // çUåÇîªíËÇê∂ê¨
@@ -58,8 +65,9 @@ public class PlayerWeaponController : MonoBehaviour
         attackOrigin.right * currentWeapon.hitOffset.x;
 
         currentHit = Instantiate(currentWeapon.hitDetectorPrefab, spawnPos, attackOrigin.rotation);
-        
-        currentHit.GetComponent<HitDetector>().Setup(currentWeapon.damage);
+
+        int dmg = currentWeapon.levelDamage[weaponLevel - 1];
+        currentHit.GetComponent<HitDetector>().Setup(dmg);
         Debug.Log("Current Weapon: " + currentWeapon.weaponName + " Damage: " + currentWeapon.damage);
         
     }

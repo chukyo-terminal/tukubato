@@ -15,9 +15,15 @@ MonoBehaviour:
   weaponName: 
   weaponPrefab: {fileID: 1433962087805124, guid: 7198ebc1636d9014b899ad585859bb94, type: 3}
   hitDetectorPrefab: {fileID: 7728915406079525774, guid: 228e2204238b76c4399da73a6ad855de, type: 3}
+  weaponType: 5
   damage: 1
   attackCooldown: 0
   attackRange: 0
-  attackAnimation: {fileID: 7400000, guid: de7f81be473e8314980af0a1ed45c3b0, type: 2}
-  idleAnimation: {fileID: 7400000, guid: d03fba3d03e85e0429381cdb1dd4e26a, type: 2}
+  attackAnimation: {fileID: 7400000, guid: c85f9e797498ecd479be8c6c1aafa40b, type: 2}
+  idleAnimation: {fileID: 5277074223372327553, guid: ce3c97051ac33ce44b802b0ca8c16c4d, type: 3}
   hitOffset: {x: 0, y: 0.5, z: 0.5}
+  levelDamage: 010000000200000003000000
+  levelcooldown:
+  - 0
+  - 0
+  - 0

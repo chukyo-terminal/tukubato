@@ -11,10 +11,10 @@ public class TutrialManager : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
 
     private string[] messages = {
-        "遊んでくれてありがとう！",
+        "遊んでくれてありがとう！(A/Enterで次へ)",
         "まずは移動してみよう！",
         "次は敵を攻撃して倒そう！",
-        "アイテムをドロップしたよ！",
+        "アイテムをドロップしたよ！(A/Enterで次へ)",
         "アイテムでくすりを作ってみよう！",
         "次はアイテムを使ってみよう！",
         "これでチュートリアルは終わり！"

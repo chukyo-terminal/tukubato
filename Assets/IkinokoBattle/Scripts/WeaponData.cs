@@ -8,6 +8,8 @@ public class WeaponData : ScriptableObject
     public GameObject weaponPrefab;      // 手に持つモデル
     public GameObject hitDetectorPrefab; // 攻撃判定プレハブ
 
+    public Item.ItemType weaponType;
+
     public int damage;
     public float attackCooldown;
     public float attackRange;
@@ -16,6 +18,9 @@ public class WeaponData : ScriptableObject
     public AnimationClip idleAnimation;
 
     public Vector3 hitOffset = new Vector3(0, 1, 1.5f);
+
+    public int[] levelDamage;
+    public float[] levelcooldown;
     //public AnimatorOverrideController overrideController;
     //animator.runtimeAnimatorController = newWeapon.overrideController;
 

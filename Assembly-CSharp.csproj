@@ -112,6 +112,7 @@
     <Compile Include="Assets\IkinokoBattle\Scripts\LifeGauge.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\GameTimer.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\MakeMedicine.cs" />
+    <Compile Include="Assets\IkinokoBattle\Scripts\RangeAttack.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\LifeGaugeContainer.cs" />
@@ -170,6 +171,7 @@
     <Compile Include="Assets\IkinokoBattle\Scripts\PlayerStatus.cs" />
     <Compile Include="Assets\Scenes\Low_Poly_Survival\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\InformedPanel.cs" />
+    <Compile Include="Assets\IkinokoBattle\Scripts\FireBall.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\RecipeDialog.cs" />
   </ItemGroup>
   <ItemGroup>
