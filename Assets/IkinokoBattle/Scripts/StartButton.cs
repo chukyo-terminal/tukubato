@@ -20,4 +20,10 @@ public class StartButton : MonoBehaviour
         });
         
     }
+
+    private void OnEnable()
+    {
+        EventSystem.current.SetSelectedGameObject(startButton);
+    }
+
 }

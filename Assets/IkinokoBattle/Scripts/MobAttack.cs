@@ -37,7 +37,7 @@ public class MobAttack : MonoBehaviour
     {
         var targetMob = collider.GetComponent<MobStatus>();
         if (null == targetMob) return;
-        targetMob.Damage(1);
+        targetMob.Damage(_status.attackpower);
     }
 
 

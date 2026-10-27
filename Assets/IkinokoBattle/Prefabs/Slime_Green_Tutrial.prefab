@@ -117,6 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStatus
   lifeMax: 2
   _life: 0
+  attackpower: 1
   pointValue: 2
 --- !u!114 &1919531998362737694
 MonoBehaviour:

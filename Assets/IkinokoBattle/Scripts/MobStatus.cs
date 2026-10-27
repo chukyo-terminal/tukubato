@@ -18,6 +18,7 @@ public class MobStatus : MonoBehaviour
     protected Animator _animator;
     protected StateEnum _state = StateEnum.Normal;
     public float _life;
+    public int attackpower;
     // Update is called once per frame
     protected virtual void Start()
     {

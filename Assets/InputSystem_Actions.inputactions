@@ -295,7 +295,7 @@
                 {
                     "name": "",
                     "id": "ee3d0cd2-254e-47a7-a8cb-bc94d9658c54",
-                    "path": "<Joystick>/trigger",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button4",
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
@@ -310,17 +310,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "888906ff-6194-4e77-9e77-d0177290bf6f",
-                    "path": "<Joystick>/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Joystick",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
