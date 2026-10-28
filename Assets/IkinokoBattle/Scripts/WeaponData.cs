@@ -16,6 +16,10 @@ public class WeaponData : ScriptableObject
 
     public AnimationClip attackAnimation; // © ƒ‚[ƒVƒ‡ƒ“‚à•Ší‚²‚Æ‚É•Ï‚¦‚é
     public AnimationClip idleAnimation;
+    public bool isDashAttack;
+    public float dashDistance = 2f;
+    public float dashTime = 0.15f;
+
 
     public Vector3 hitOffset = new Vector3(0, 1, 1.5f);
 
