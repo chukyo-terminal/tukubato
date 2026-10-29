@@ -40,7 +40,6 @@ public class Menu : MonoBehaviour
         titleButton.onClick.AddListener(TitleBack);
         itemsButton.onClick.AddListener(OpenItemsDialog);
         closeButton.onClick.AddListener(CloseDialog);
-        makeThrowAxeButton.onClick.AddListener(MTAxe);
         throwAxeButton.onClick.AddListener(TAxe);
     }
 
@@ -85,10 +84,7 @@ public class Menu : MonoBehaviour
         
     }
 
-    private void MTAxe()
-    {
-        makethrowAxe.MakeTA();
-    }
+   
     private void TAxe()
     {
         makethrowAxe.ThrowAxe();

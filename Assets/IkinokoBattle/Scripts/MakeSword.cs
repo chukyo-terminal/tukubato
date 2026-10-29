@@ -6,10 +6,15 @@ public class MakeSword : MonoBehaviour
 {
     [SerializeField] private Button makeSwordButton;
     [SerializeField] private ItemsDialog itemsDialog;
+    [SerializeField] private CraftConfirmPanel craftPanel;
+    [SerializeField] private CraftRecipe recipe;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        makeSwordButton.onClick.AddListener(MakeSw);
+        makeSwordButton.onClick.AddListener(() =>
+        {
+            craftPanel.Open(recipe);
+        });
     }
 
 

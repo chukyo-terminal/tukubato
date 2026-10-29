@@ -6,10 +6,15 @@ public class MakeSpear : MonoBehaviour
 {
     [SerializeField] private Button makeSpearButton;
     [SerializeField] private ItemsDialog itemsDialog;
+    [SerializeField] private CraftConfirmPanel craftPanel;
+    [SerializeField] private CraftRecipe recipe;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        makeSpearButton.onClick.AddListener(MakeSp);
+        makeSpearButton.onClick.AddListener(() =>
+        {
+            craftPanel.Open(recipe);
+        });
     }
 
 

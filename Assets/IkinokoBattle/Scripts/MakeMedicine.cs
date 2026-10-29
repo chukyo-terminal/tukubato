@@ -5,10 +5,15 @@ public class MakeMedicine : MonoBehaviour
 {
     [SerializeField] private Button makeMeButton;
     [SerializeField] private ItemsDialog itemsDialog;
+    [SerializeField] private CraftConfirmPanel craftPanel;
+    [SerializeField] private CraftRecipe recipe;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        makeMeButton.onClick.AddListener(MakeMe);
+        makeMeButton.onClick.AddListener(() =>
+        {
+            craftPanel.Open(recipe);
+        });
     }
 
     public void MakeMe()

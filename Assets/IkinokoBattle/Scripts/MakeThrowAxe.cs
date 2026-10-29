@@ -8,10 +8,15 @@ public class MakeThrowAxe : MonoBehaviour
     [SerializeField] private GameObject throwAxePrefab;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private ItemsDialog itemsDialog;
+    [SerializeField] private CraftConfirmPanel craftPanel;
+    [SerializeField] private CraftRecipe recipe;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        makeTAButton.onClick.AddListener(MakeTA);
+        makeTAButton.onClick.AddListener(() =>
+        {
+            craftPanel.Open(recipe);
+        });
     }
 
 
