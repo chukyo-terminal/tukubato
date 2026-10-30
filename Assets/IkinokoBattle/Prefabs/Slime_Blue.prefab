@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 8065806627761665269}
   - component: {fileID: 994566130621120276}
   - component: {fileID: 5346116877940171606}
+  - component: {fileID: 3157402607303402707}
   m_Layer: 9
   m_Name: Slime_Blue
   m_TagString: Enemy
@@ -409,9 +410,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e089287aa54454299443d430e661c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStatus
-  lifeMax: 4
+  lifeMax: 6
   _life: 0
-  attackpower: 1
+  attackpower: 2
   damagesound: {fileID: 6538310245625102329}
   pointValue: 2
 --- !u!114 &686755556385206620
@@ -480,7 +481,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MobItemDropper
   dropRate: 0.75
   itemPrefab: {fileID: 9152481847138212938, guid: 7706fd457dcfbef42911e21f5f206f84, type: 3}
-  number: 100
+  number: 5
+--- !u!114 &3157402607303402707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3339418747153598722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cffcf857c9957049b00332cc82c5b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MobItemDropper
+  dropRate: 0.75
+  itemPrefab: {fileID: 8680121494687775295, guid: 3f131696b928c0b43bfc0aa9f495cf03, type: 3}
+  number: 8
 --- !u!1 &3553578806493598347
 GameObject:
   m_ObjectHideFlags: 0

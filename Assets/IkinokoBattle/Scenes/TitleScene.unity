@@ -1113,7 +1113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
-  m_FirstSelected: {fileID: 1843799468}
+  m_FirstSelected: {fileID: 988893394}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1076645780
@@ -1267,7 +1267,7 @@ MonoBehaviour:
     creditSyncInterval: 10
     forceTerminateAckWindow: 1.5
   connectOnAwake: 1
-  mockTransport: {fileID: 0}
+  mockTransport: {fileID: 1127740548}
   logMessages: 0
   connected: 0
   availableCredits: 0
@@ -1340,8 +1340,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -233, y: -72}
-  m_SizeDelta: {x: 223.77, y: 59.6294}
+  m_AnchoredPosition: {x: -214.66, y: -72}
+  m_SizeDelta: {x: 260.44, y: 59.6294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662267944
 MonoBehaviour:
@@ -1370,7 +1370,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 40
-    m_Alignment: 2
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

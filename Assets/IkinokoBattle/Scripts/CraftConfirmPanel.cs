@@ -59,6 +59,7 @@ public class CraftConfirmPanel : MonoBehaviour
             {
                 Debug.Log("ëfçﬁÇ™ë´ÇËÇ‹ÇπÇÒ");
                 panel.SetActive(false);
+                EventSystem.current.SetSelectedGameObject(itemButton);
                 return;
             }
         }
@@ -83,7 +84,11 @@ public class CraftConfirmPanel : MonoBehaviour
         {
             PlayerEvents.OnCraft?.Invoke();
         }
-        
+
+        if (currentRecipe.resultItem == Item.ItemType.Medicine)
+        {
+            PlayerEvents.OnCraftM?.Invoke();
+        }
 
         panel.SetActive(false);
     }

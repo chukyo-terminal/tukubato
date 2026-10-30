@@ -631,11 +631,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4e089287aa54454299443d430e661c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyStatus
-  lifeMax: 16
+  lifeMax: 30
   _life: 0
-  attackpower: 2
+  attackpower: 4
   damagesound: {fileID: 1031415729673438062}
-  pointValue: 8
+  pointValue: 10
 --- !u!114 &7806797154527642396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,9 +685,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cffcf857c9957049b00332cc82c5b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MobItemDropper
-  dropRate: 0.75
+  dropRate: 1
   itemPrefab: {fileID: 8680121494687775295, guid: 3f131696b928c0b43bfc0aa9f495cf03, type: 3}
-  number: 100
+  number: 20
 --- !u!1 &6492440073660316327
 GameObject:
   m_ObjectHideFlags: 0

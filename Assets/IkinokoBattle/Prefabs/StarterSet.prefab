@@ -108,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 804986957618288007}
   serializedVersion: 2
   m_LocalRotation: {x: 0.3826835, y: -0.000000011286983, z: 0.0000000046752224, w: 0.92387956}
-  m_LocalPosition: {x: -170.56392, y: -215.7532, z: -202.519}
+  m_LocalPosition: {x: -135.2, y: -215.7532, z: -192.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1118,7 +1118,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 8b4d4d3522c008c4e85b3a15e39a5db1, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: b33ead45ae15cb042ad2b44ba3ba13bd, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &1658402468701737654
 GameObject:
@@ -1674,7 +1674,7 @@ Transform:
   m_GameObject: {fileID: 3055698622795543782}
   serializedVersion: 2
   m_LocalRotation: {x: 0.38268346, y: -0.000000011286981, z: 0.0000000046752207, w: 0.92387956}
-  m_LocalPosition: {x: -170.56392, y: -215.7532, z: -202.519}
+  m_LocalPosition: {x: -135.2, y: -215.7532, z: -192.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2051,7 +2051,7 @@ MonoBehaviour:
     resultItem: 2
     resultCount: 1
     materials: 0000000001000000
-    materialCounts: 0200000003000000
+    materialCounts: 0300000003000000
 --- !u!1 &3172175241810737106
 GameObject:
   m_ObjectHideFlags: 0
@@ -3354,7 +3354,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -278.90002, y: -58.170013}
+  m_AnchoredPosition: {x: -334, y: -81}
   m_SizeDelta: {x: 557.80005, y: 116.349976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4216942801240991832
@@ -4398,7 +4398,7 @@ MonoBehaviour:
     resultItem: 5
     resultCount: 1
     materials: 0000000001000000
-    materialCounts: 0400000001000000
+    materialCounts: 0400000002000000
 --- !u!1 &6262694499569770728
 GameObject:
   m_ObjectHideFlags: 0
@@ -4956,8 +4956,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.6088, y: 92.305}
-  m_SizeDelta: {x: 640.21, y: 41.389}
+  m_AnchoredPosition: {x: 2.6088, y: 96.072}
+  m_SizeDelta: {x: 640.21, y: 48.924}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3847845062730423689
 CanvasRenderer:
@@ -5158,7 +5158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 163.922, y: -58.168}
+  m_AnchoredPosition: {x: 229, y: -107}
   m_SizeDelta: {x: 327.844, y: 116.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &910746589207877220
@@ -6119,7 +6119,7 @@ MonoBehaviour:
     resultItem: 4
     resultCount: 1
     materials: 0000000001000000
-    materialCounts: 0100000004000000
+    materialCounts: 0300000004000000
 --- !u!1 &8918396525538505057
 GameObject:
   m_ObjectHideFlags: 0
@@ -6292,7 +6292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062157943528970188, guid: b2dfadfada0fd634ebbfc36909e42c1c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -170.56392
+      value: -135.2
       objectReference: {fileID: 0}
     - target: {fileID: 8062157943528970188, guid: b2dfadfada0fd634ebbfc36909e42c1c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6300,7 +6300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8062157943528970188, guid: b2dfadfada0fd634ebbfc36909e42c1c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -198.519
+      value: -188.2
       objectReference: {fileID: 0}
     - target: {fileID: 8062157943528970188, guid: b2dfadfada0fd634ebbfc36909e42c1c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6514,7 +6514,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   movespeed: 3
-  jumpPower: 6
+  jumpPower: 0
   animator: {fileID: 184480821887557106}
   attackButton: {fileID: 4705109230894007987}
 --- !u!114 &2000205483987512422
@@ -6529,7 +6529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5cfac68cc64f5498818db207fd356f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStatus
-  lifeMax: 50
+  lifeMax: 70
   _life: 0
   attackpower: 0
   damagesound: {fileID: 8134236838310274777}

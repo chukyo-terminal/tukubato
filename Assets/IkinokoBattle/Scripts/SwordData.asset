@@ -21,6 +21,9 @@ MonoBehaviour:
   attackRange: 0
   attackAnimation: {fileID: 7400000, guid: 3ac2fc8bbb35998488378a88779c7e33, type: 2}
   idleAnimation: {fileID: 7400000, guid: 6ec045986f5ef8840a0a810f4f4172c7, type: 3}
+  isDashAttack: 0
+  dashDistance: 2
+  dashTime: 0.15
   hitOffset: {x: 0, y: 0.5, z: 0.5}
-  levelDamage: 020000000300000004000000
+  levelDamage: 02000000030000000400000005000000060000000700000008000000090000000a000000
   levelcooldown: []

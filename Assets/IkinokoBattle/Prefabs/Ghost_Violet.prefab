@@ -450,7 +450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MobItemDropper
   dropRate: 0.8
   itemPrefab: {fileID: 9152481847138212938, guid: 7706fd457dcfbef42911e21f5f206f84, type: 3}
-  number: 10
+  number: 8
 --- !u!114 &4949286069214778442
 MonoBehaviour:
   m_ObjectHideFlags: 0
