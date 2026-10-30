@@ -1267,7 +1267,7 @@ MonoBehaviour:
     creditSyncInterval: 10
     forceTerminateAckWindow: 1.5
   connectOnAwake: 1
-  mockTransport: {fileID: 1127740548}
+  mockTransport: {fileID: 0}
   logMessages: 0
   connected: 0
   availableCredits: 0

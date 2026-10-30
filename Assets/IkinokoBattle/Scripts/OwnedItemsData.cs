@@ -2,8 +2,6 @@ using UnityEngine;
 using System;
 using System.Linq;
 using System.Collections.Generic;
-using UnityEditorInternal;
-using UnityEditorInternal.Profiling.Memory.Experimental;
 
 [Serializable]
 
