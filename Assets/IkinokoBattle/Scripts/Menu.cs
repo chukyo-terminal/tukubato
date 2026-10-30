@@ -1,3 +1,4 @@
+using ChukyoTerminal.ArcadeNetworking;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -29,6 +30,7 @@ public class Menu : MonoBehaviour
     public InputActionReference openItemsDialog;
     public InputActionReference throwAxe;
     public InputActionReference pause;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
@@ -57,10 +59,14 @@ public class Menu : MonoBehaviour
         
     }
 
-    private void TitleBack()
+    private async void TitleBack()
     {
         Time.timeScale = 1;
         OwnedItemsData.Reset();
+        
+        await ArcadeNetwork.EndPlayAsync();
+        
+
         SceneManager.LoadScene("TitleScene");
     }
 

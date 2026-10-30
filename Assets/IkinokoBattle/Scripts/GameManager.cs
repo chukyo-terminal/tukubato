@@ -1,6 +1,7 @@
+using ChukyoTerminal.ArcadeNetworking;
+using System.Collections;
 using TMPro;
 using UnityEngine;
-using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -47,7 +48,7 @@ public class GameManager : MonoBehaviour
         pointText.text = $"ポイント: {currentPoint} / {clearPoint}";
     }
 
-    public void OnGameClear()
+    public async void OnGameClear()
     {
         // タイマー停止
         gameTimer.StopTimer();
@@ -65,6 +66,12 @@ public class GameManager : MonoBehaviour
         // クリア画面を表示
         clearPanel.SetActive(true);
         Time.timeScale = 0;
+        
+        var result = await ArcadeNetwork.EndPlayAsync();
+        Debug.Log($"EndPlayAsync: {result.Succeeded}, {result.Message}");
+        Debug.Log($"Flags: {ArcadeNetwork.Status.Flags}");
+        Debug.Log($"IsInPlay: {ArcadeNetwork.Status.IsInPlay}");
+
         StartCoroutine(ReturnToTitleAfterDelay());
     }
 

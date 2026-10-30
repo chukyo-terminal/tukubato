@@ -1,3 +1,4 @@
+using ChukyoTerminal.ArcadeNetworking;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -8,16 +9,34 @@ public class StartButton : MonoBehaviour
 {
     [SerializeField] private GameObject startButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Start()
+    public void Start()
     {
         var button = GetComponent<Button>();
         EventSystem.current.SetSelectedGameObject(startButton);
-        button.onClick.AddListener(() =>
+        button.onClick.AddListener(async() =>
         {
-            OwnedItemsData.Reset();
-            SceneManager.LoadScene("MainScene");
-            Time.timeScale = 1;
+            PlayStartResult result = await ArcadeNetwork.TryStartPlayAsync();
+
+            if (result.Succeeded)
+            {
+                OwnedItemsData.Reset();
+
+                Debug.Log($"StartPlayAsync: {result.Succeeded}, {result.Message}");
+                Debug.Log($"Flags: {ArcadeNetwork.Status.Flags}");
+                Debug.Log($"IsInPlay: {ArcadeNetwork.Status.IsInPlay}");
+
+                SceneManager.LoadScene("MainScene");
+                Time.timeScale = 1;
+            }
+            else
+            {
+                Debug.Log($"ƒvƒŒƒC‚ðŽn‚ß‚ç‚ê‚Ü‚¹‚ñ: {result.Message}");
+            }
+
         });
+           
+        
+       
         
     }
 

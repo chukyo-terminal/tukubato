@@ -1,3 +1,4 @@
+using ChukyoTerminal.ArcadeNetworking;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -107,11 +108,17 @@ public class TutrialManager : MonoBehaviour
         }
     }
 
-    private void ShowStep(int s)
+    private async void ShowStep(int s)
     {
         StartCoroutine(ChangeText(messages[s]));
         if (s == 9)
         {
+           
+            var result = await ArcadeNetwork.EndPlayAsync();
+            Debug.Log($"EndPlayAsync: {result.Succeeded}, {result.Message}");
+            Debug.Log($"Flags: {ArcadeNetwork.Status.Flags}");
+            Debug.Log($"IsInPlay: {ArcadeNetwork.Status.IsInPlay}");
+
             StartCoroutine(ReturnToTitleAfterDelay());
         }
     }

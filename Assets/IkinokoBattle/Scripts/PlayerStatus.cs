@@ -1,13 +1,20 @@
-using UnityEngine;
+using ChukyoTerminal.ArcadeNetworking;
 using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerStatus : MobStatus
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    protected override void OnDie()
+    protected override async void OnDie()
     {
         base.OnDie();
+        
+        var result = await ArcadeNetwork.EndPlayAsync();
+        Debug.Log($"EndPlayAsync: {result.Succeeded}, {result.Message}");
+        Debug.Log($"Flags: {ArcadeNetwork.Status.Flags}");
+        Debug.Log($"IsInPlay: {ArcadeNetwork.Status.IsInPlay}");
+
         StartCoroutine(GoToGameOverCoroutine());
     }
 

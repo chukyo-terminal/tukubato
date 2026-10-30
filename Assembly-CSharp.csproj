@@ -94,6 +94,7 @@
     <Compile Include="Assets\AllStarCharacterLibrary\Scripts\PickUp.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\AllStarCharacterLibrary\Scripts\ASCLBasicController.cs" />
+    <Compile Include="Assets\IkinokoBattle\Scripts\TitleScreen.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\IkinokoBattle\Scripts\MobStatus.cs" />
     <Compile Include="Assets\AllStarCharacterLibrary\Scripts\EnvTarget.cs" />
@@ -1626,6 +1627,10 @@
     </Reference>
     <Reference Include="Unity.RenderPipelines.GPUDriven.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.RenderPipelines.GPUDriven.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ChukyoTerminal.ArcadeNetworking">
+      <HintPath>Library\ScriptAssemblies\ChukyoTerminal.ArcadeNetworking.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
