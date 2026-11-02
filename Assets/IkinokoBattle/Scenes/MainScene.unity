@@ -4805,6 +4805,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: StarterSet
       objectReference: {fileID: 0}
+    - target: {fileID: 4030837494426934738, guid: c24797adb072ab0438bc5173f1227cba, type: 3}
+      propertyPath: m_Text
+      value: "\u653B\u6483\nX"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886016294871362362, guid: c24797adb072ab0438bc5173f1227cba, type: 3}
+      propertyPath: m_Text
+      value: "\u30A2\u30A4\u30C6\u30E0\nY"
+      objectReference: {fileID: 0}
     - target: {fileID: 7237148852473290715, guid: c24797adb072ab0438bc5173f1227cba, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0

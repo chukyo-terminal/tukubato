@@ -12,7 +12,7 @@ public class TitleScreen : MonoBehaviour
 
    
     [SerializeField] private GameObject pressStart;
-    [SerializeField] private Text creditText;
+    
 
     private IDisposable _watch;
 
@@ -25,19 +25,15 @@ public class TitleScreen : MonoBehaviour
            
         });
 
-        ArcadeNetwork.CreditsChanged += ShowCredits;
-        ShowCredits(ArcadeNetwork.Status.AvailableCredits);
+        
     }
 
     private void OnDisable()
     {
         // 登録したものは必ず解除する
         _watch.Dispose();
-        ArcadeNetwork.CreditsChanged -= ShowCredits;
+        
     }
 
-    private void ShowCredits(int credits)
-    {
-        creditText.text = $"残りプレイ数 {credits}";
-    }
+    
 }
