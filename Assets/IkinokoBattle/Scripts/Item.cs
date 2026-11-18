@@ -9,7 +9,9 @@ public class Item : MonoBehaviour
         Wood,
         Stone,
         ThrowAxe,
-        Medicine
+        Medicine,
+        Sword,
+        Spear
     }
 
     [SerializeField] private ItemType type;

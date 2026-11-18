@@ -7,4 +7,5 @@ public static class PlayerEvents
     public static System.Action OnGet;
     public static System.Action OnCraft;
     public static System.Action OnUseItem;
+    public static System.Action OnCraftM;
 }

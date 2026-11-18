@@ -64,7 +64,7 @@
                     "name": "Previous",
                     "type": "Button",
                     "id": "2776c80d-3c14-4091-8c56-d04ced07a2b0",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -295,7 +295,7 @@
                 {
                     "name": "",
                     "id": "ee3d0cd2-254e-47a7-a8cb-bc94d9658c54",
-                    "path": "<Joystick>/trigger",
+                    "path": "<HID::Nintendo Wireless Gamepad>/button4",
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
@@ -316,11 +316,11 @@
                 },
                 {
                     "name": "",
-                    "id": "888906ff-6194-4e77-9e77-d0177290bf6f",
-                    "path": "<Joystick>/trigger",
+                    "id": "daf199d0-421a-4214-bf6b-dbe0b8a46fd4",
+                    "path": "<Keyboard>/j",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Joystick",
+                    "groups": "",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -387,28 +387,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "daba33a1-ad0c-4742-a909-43ad1cdfbeb6",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "603f3daf-40bd-4854-8724-93e8017f59e3",
-                    "path": "<XRController>/secondaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "XR",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -492,6 +470,17 @@
                 },
                 {
                     "name": "",
+                    "id": "bafc2947-2160-44bb-955b-1004f78fa144",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "OpenItemsDialog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7fa92add-a9e1-4afc-b689-9ff977bd7363",
                     "path": "<HID::Nintendo Wireless Gamepad>/button16",
                     "interactions": "",
@@ -504,10 +493,10 @@
                 {
                     "name": "",
                     "id": "f00caf2f-31d2-4cc1-a6a0-3493efa4ef52",
-                    "path": "",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad",
                     "action": "ThrowAxe",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -526,7 +515,7 @@
                 {
                     "name": "",
                     "id": "17713e16-2edd-4346-9eba-aa92598e7a42",
-                    "path": "",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -1096,11 +1085,22 @@
                 },
                 {
                     "name": "",
-                    "id": "74737014-6eed-4110-b210-b5ffeb450d4b",
+                    "id": "6c7dd401-2063-4cd2-8c66-777c17b1ab98",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Touch",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "23c0d443-af45-4541-929f-be07030bf70f",
                     "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false

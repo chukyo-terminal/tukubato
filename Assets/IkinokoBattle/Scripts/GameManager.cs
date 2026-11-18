@@ -1,6 +1,7 @@
+using ChukyoTerminal.ArcadeNetworking;
+using System.Collections;
 using TMPro;
 using UnityEngine;
-using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text clearTimeText;
     [SerializeField] private GameObject clearPanel;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private TMP_Text pointText;   // ← 追加
 
     public static GameManager instance;
 
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
     public void Start()
     {
         clearPanel.SetActive(false);
+        UpdatePointUI(); // ← 初期表示
     }
     
     public void AddPoint(int value)
@@ -32,13 +35,20 @@ public class GameManager : MonoBehaviour
         currentPoint += value;
         Debug.Log("ポイント：" + currentPoint);
 
-        if(currentPoint >= clearPoint)
+        UpdatePointUI(); // ← 更新
+
+        if (currentPoint >= clearPoint)
         {
             OnGameClear();
         }
     }
 
-    public void OnGameClear()
+    private void UpdatePointUI()
+    {
+        pointText.text = $"ポイント: {currentPoint} / {clearPoint}";
+    }
+
+    public async void OnGameClear()
     {
         // タイマー停止
         gameTimer.StopTimer();
@@ -56,6 +66,12 @@ public class GameManager : MonoBehaviour
         // クリア画面を表示
         clearPanel.SetActive(true);
         Time.timeScale = 0;
+        
+        var result = await ArcadeNetwork.EndPlayAsync();
+        Debug.Log($"EndPlayAsync: {result.Succeeded}, {result.Message}");
+        Debug.Log($"Flags: {ArcadeNetwork.Status.Flags}");
+        Debug.Log($"IsInPlay: {ArcadeNetwork.Status.IsInPlay}");
+
         StartCoroutine(ReturnToTitleAfterDelay());
     }
 

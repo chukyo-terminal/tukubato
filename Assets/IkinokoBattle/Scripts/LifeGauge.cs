@@ -24,7 +24,10 @@ public class LifeGauge : MonoBehaviour
 
     private void Refresh()
     {
+        Debug.Log($"Life={_status.Life} Max={_status.LifeMax}");
         fillImage.fillAmount = _status.Life / _status.LifeMax;
+
+        Debug.Log($"Fill={fillImage.fillAmount}");
 
         var screenPoint = _camera.WorldToScreenPoint(_status.transform.position);
         Vector2 localPoint;

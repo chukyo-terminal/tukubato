@@ -1,3 +1,4 @@
+using ChukyoTerminal.ArcadeNetworking;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -9,70 +10,127 @@ public class TutrialManager : MonoBehaviour
     [SerializeField] private InputActionReference nextTutorialAction;
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private RectTransform tutorialPanel;
+    [SerializeField] private Vector2 upperPos;
+    [SerializeField] private Vector2 lowerPos;
 
-    private string[] messages = {
-        "遊んでくれてありがとう！",
-        "まずは移動してみよう！",
-        "次は敵を攻撃して倒そう！",
-        "アイテムをドロップしたよ！",
-        "アイテムでくすりを作ってみよう！",
-        "次はアイテムを使ってみよう！",
-        "これでチュートリアルは終わり！"
+    private string[] messages =
+    {
+        "遊んでくれてありがとう！(A/Enterで次へ)",
+        "まずは左スティック/WASDで移動してみよう！",
+        "次は敵をYボタンで攻撃して倒そう！",
+        "アイテムをドロップしたよ！拾ってね！(A/Enterで次へ)",
+        "Xボタンでアイテム画面を開いて、左スティック/マウスカーソルで「剣をつくる」を選んで剣を作ってみよう！（Aボタン/左クリックで決定）",
+        "次は剣を装備してみよう！（左スティック/マウスカーソルで剣を選んでAボタン/左クリックで決定）",
+        "武器を装備すると攻撃力がアップする！(A/Enterで次へ)",
+        "剣をもう一つ作ってみよう！",
+        "武器を追加で作ると武器のレベルが上がってさらに強くなる！(A/Enterで次へ)",
+        "次は薬を作ってみよう！",
+        "できた薬を使うと体力を回復できる！(A/Enterで次へ)",
+        "武器やアイテムをたくさん作って敵を倒し続けよう！(A/Enterで次へ)",
+        "敵を倒してポイントがたまったらゲーム終了！最速クリアを目指せ！"
     };
 
     private int step = 0;
 
-    void Start()
+    private void Start()
     {
+        Time.timeScale = 1;
         ShowStep(step);
-        nextTutorialAction.action.performed += ctx => OnFirstMessageInput();
-        PlayerEvents.OnMove += () => CheckStep("move");
-        PlayerEvents.OnEnemyKilled += () => CheckStep("kill");
-        PlayerEvents.OnGet += () => CheckStep("get");
-        PlayerEvents.OnCraft += () => CheckStep("craft");
-        PlayerEvents.OnUseItem += () => CheckStep("use");
+
+        nextTutorialAction.action.performed += OnNextTutorialInput;
+
+        PlayerEvents.OnMove += OnMove;
+        PlayerEvents.OnEnemyKilled += OnKill;
+        PlayerEvents.OnCraft += OnCraft;
+        PlayerEvents.OnUseItem += OnUse;
+        PlayerEvents.OnCraftM += OnCraftM;
+    }
+
+    private void OnDestroy()
+    {
+        if (nextTutorialAction != null)
+        {
+            nextTutorialAction.action.performed -= OnNextTutorialInput;
+        }
+
+        PlayerEvents.OnMove -= OnMove;
+        PlayerEvents.OnEnemyKilled -= OnKill;
+        PlayerEvents.OnCraft -= OnCraft;
+        PlayerEvents.OnUseItem -= OnUse;
+        PlayerEvents.OnCraftM -= OnCraftM;
+    }
+
+    private void OnNextTutorialInput(InputAction.CallbackContext ctx)
+    {
+        OnFirstMessageInput();
+    }
+
+    private void OnMove()
+    {
+        CheckStep("move");
+    }
+
+    private void OnKill()
+    {
+        CheckStep("kill");
+    }
+
+    private void OnCraft()
+    {
+        CheckStep("craft");
+    }
+
+    private void OnUse()
+    {
+        CheckStep("use");
+    }
+
+    private void OnCraftM()
+    {
+        CheckStep("craftm");
     }
 
     private void OnFirstMessageInput()
     {
-        if (step == 0)
-        {
-            NextStep();
-        }
-
-        if (step == 3)
+        if (step == 0 ||
+            step == 3 ||
+            step == 6 ||
+            step == 8 ||
+            step == 10 ||
+            step == 11)
         {
             NextStep();
         }
     }
-
 
     private void CheckStep(string action)
     {
         switch (step)
         {
-            case 1: // 移動フェーズ
+            case 1:
                 if (action == "move") NextStep();
                 break;
 
-           
-
-            case 2: // 敵撃破フェーズ
+            case 2:
                 if (action == "kill") NextStep();
                 break;
 
-            case 3:
-                if (action == "get") NextStep();
-                break;
-
-            case 4: // アイテム作成フェーズ
+            case 4:
                 if (action == "craft") NextStep();
                 break;
 
-            case 5: // アイテム使用フェーズ
+            case 5:
                 if (action == "use") NextStep();
                 break;
 
+            case 7:
+                if (action == "craft") NextStep();
+                break;
+
+            case 9:
+                if (action == "craftm") NextStep();
+                break;
         }
     }
 
@@ -80,9 +138,28 @@ public class TutrialManager : MonoBehaviour
     {
         step++;
 
-        if(step == 2 )
+        if (step == 2)
         {
-            Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+            if (spawnPoint == null)
+            {
+                Debug.LogError("SpawnPoint is missing!");
+                return;
+            }
+
+            Instantiate(
+                enemyPrefab,
+                spawnPoint.position,
+                spawnPoint.rotation);
+        }
+
+        if(step == 4)
+        {
+            tutorialPanel.anchoredPosition = upperPos;
+        }
+
+        if(step == 5)
+        {
+            tutorialPanel.anchoredPosition = lowerPos;
         }
 
         if (step < messages.Length)
@@ -91,33 +168,44 @@ public class TutrialManager : MonoBehaviour
         }
     }
 
-    private void ShowStep(int s)
+    private async void ShowStep(int s)
     {
         StartCoroutine(ChangeText(messages[s]));
-        if (s == 6)
+
+        if (s == 12)
         {
+            var result = await ArcadeNetwork.EndPlayAsync();
+
+            // await中に破棄された場合
+            if (this == null)
+            {
+                return;
+            }
+
+            Debug.Log($"EndPlayAsync: {result.Succeeded}, {result.Message}");
+            Debug.Log($"Flags: {ArcadeNetwork.Status.Flags}");
+            Debug.Log($"IsInPlay: {ArcadeNetwork.Status.IsInPlay}");
+
             StartCoroutine(ReturnToTitleAfterDelay());
         }
     }
 
     private IEnumerator ChangeText(string newText)
     {
-        // フェードアウト
+        
         tutorialText.CrossFadeAlpha(0, 0.3f, false);
+
         yield return new WaitForSecondsRealtime(0.3f);
 
-        // テキスト差し替え
         tutorialText.text = newText;
 
-        // フェードイン
         tutorialText.CrossFadeAlpha(1, 0.3f, false);
     }
 
     public IEnumerator ReturnToTitleAfterDelay()
     {
-        yield return new WaitForSecondsRealtime(5f); // ← timeScale=0でも動く
-
+        yield return new WaitForSecondsRealtime(5f);
+        Time.timeScale = 1;
         UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScene");
     }
-
 }

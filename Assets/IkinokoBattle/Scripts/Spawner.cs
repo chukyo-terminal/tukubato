@@ -27,7 +27,7 @@ public class Spawner : MonoBehaviour
                 Instantiate(enemyPrefab, navMeshHit.position, Quaternion.identity);
             }
 
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(15);
 
             if(playerStatus.Life <= 0)
             {

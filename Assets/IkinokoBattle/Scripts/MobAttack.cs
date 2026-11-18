@@ -9,6 +9,9 @@ public class MobAttack : MonoBehaviour
     [SerializeField] private Collider attackCollider;
 
     private MobStatus _status;
+
+    public System.Action OnAttackStartEvent;
+    public System.Action OnAttackFinishedEvent;
     private void Start()
     {
         _status = GetComponent<MobStatus>();
@@ -27,13 +30,14 @@ public class MobAttack : MonoBehaviour
     public void OnAttackStart()
     {
         attackCollider.enabled = true;
+        OnAttackStartEvent?.Invoke();
     }
 
     public void OnHitAttack(Collider collider)
     {
         var targetMob = collider.GetComponent<MobStatus>();
         if (null == targetMob) return;
-        targetMob.Damage(1);
+        targetMob.Damage(_status.attackpower);
     }
 
 
@@ -41,6 +45,7 @@ public class MobAttack : MonoBehaviour
     {
         attackCollider.enabled = false;
         StartCoroutine(CooldownCoroutine());
+        OnAttackFinishedEvent?.Invoke();
     }
 
     private IEnumerator CooldownCoroutine()

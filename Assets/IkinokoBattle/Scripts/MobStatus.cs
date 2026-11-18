@@ -18,6 +18,8 @@ public class MobStatus : MonoBehaviour
     protected Animator _animator;
     protected StateEnum _state = StateEnum.Normal;
     public float _life;
+    public int attackpower;
+    [SerializeField] private AudioSource damagesound;
     // Update is called once per frame
     protected virtual void Start()
     {
@@ -35,6 +37,8 @@ public class MobStatus : MonoBehaviour
         if (_state == StateEnum.Die) return;
 
         _life -= damage;
+        damagesound.pitch = Random.Range(0.7f, 1.3f);
+        damagesound.Play();
         if (_life > 0) return;
 
         _state = StateEnum.Die;
