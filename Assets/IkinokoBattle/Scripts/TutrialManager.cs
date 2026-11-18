@@ -10,21 +10,24 @@ public class TutrialManager : MonoBehaviour
     [SerializeField] private InputActionReference nextTutorialAction;
     [SerializeField] private GameObject enemyPrefab;
     [SerializeField] private Transform spawnPoint;
+    [SerializeField] private RectTransform tutorialPanel;
+    [SerializeField] private Vector2 upperPos;
+    [SerializeField] private Vector2 lowerPos;
 
     private string[] messages =
     {
-        "遊んでくれてありがとう！(B/Enterで次へ)",
-        "まずは左スティックで移動してみよう！",
-        "次は敵をXボタンで攻撃して倒そう！",
-        "アイテムをドロップしたよ！拾ってね！(B/Enterで次へ)",
-        "Yボタンでアイテム画面を開いて、左スティックで「剣を作る」を選んで剣を作ってみよう！（Bボタンで決定）",
-        "次は剣を装備してみよう！（左スティックで剣を選んでBボタンで決定）",
-        "武器を装備すると攻撃力がアップする！(B/Enterで次へ)",
+        "遊んでくれてありがとう！(A/Enterで次へ)",
+        "まずは左スティック/WASDで移動してみよう！",
+        "次は敵をYボタンで攻撃して倒そう！",
+        "アイテムをドロップしたよ！拾ってね！(A/Enterで次へ)",
+        "Xボタンでアイテム画面を開いて、左スティック/マウスカーソルで「剣をつくる」を選んで剣を作ってみよう！（Aボタン/左クリックで決定）",
+        "次は剣を装備してみよう！（左スティック/マウスカーソルで剣を選んでAボタン/左クリックで決定）",
+        "武器を装備すると攻撃力がアップする！(A/Enterで次へ)",
         "剣をもう一つ作ってみよう！",
-        "武器を追加で作ると武器のレベルが上がってさらに強くなる！(B/Enterで次へ)",
+        "武器を追加で作ると武器のレベルが上がってさらに強くなる！(A/Enterで次へ)",
         "次は薬を作ってみよう！",
-        "できた薬を使うと体力を回復できる！(B/Enterで次へ)",
-        "武器やアイテムをたくさん作って敵を倒し続けよう！(B/Enterで次へ)",
+        "できた薬を使うと体力を回復できる！(A/Enterで次へ)",
+        "武器やアイテムをたくさん作って敵を倒し続けよう！(A/Enterで次へ)",
         "敵を倒してポイントがたまったらゲーム終了！最速クリアを目指せ！"
     };
 
@@ -149,6 +152,16 @@ public class TutrialManager : MonoBehaviour
                 spawnPoint.rotation);
         }
 
+        if(step == 4)
+        {
+            tutorialPanel.anchoredPosition = upperPos;
+        }
+
+        if(step == 5)
+        {
+            tutorialPanel.anchoredPosition = lowerPos;
+        }
+
         if (step < messages.Length)
         {
             ShowStep(step);
@@ -179,6 +192,7 @@ public class TutrialManager : MonoBehaviour
 
     private IEnumerator ChangeText(string newText)
     {
+        
         tutorialText.CrossFadeAlpha(0, 0.3f, false);
 
         yield return new WaitForSecondsRealtime(0.3f);

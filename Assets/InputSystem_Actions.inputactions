@@ -1085,22 +1085,22 @@
                 },
                 {
                     "name": "",
-                    "id": "74737014-6eed-4110-b210-b5ffeb450d4b",
-                    "path": "<Keyboard>/enter",
+                    "id": "6c7dd401-2063-4cd2-8c66-777c17b1ab98",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Gamepad;Touch",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "6c7dd401-2063-4cd2-8c66-777c17b1ab98",
-                    "path": "<Gamepad>/buttonEast",
+                    "id": "23c0d443-af45-4541-929f-be07030bf70f",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Gamepad;Touch",
+                    "groups": ";Keyboard&Mouse",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
